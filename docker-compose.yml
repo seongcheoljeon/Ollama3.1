@@ -4,8 +4,8 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 8005:8005
-      - 5678:5678
+      - "8005:8005"
+      - "5678:5678"
     volumes:
       - .:/code
     command: ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8005", "--reload"]
@@ -19,7 +19,7 @@ services:
   ollama:
     image: ollama/ollama:latest
     ports:
-      - 11435:11434
+      - "11435:11434"
     volumes:
       - ./ollama/ollama:/root/.ollama
     networks:
@@ -40,7 +40,6 @@ services:
               count: 1
               capabilities: [gpu]
 
-
   ollama-webui:
     image: ghcr.io/open-webui/open-webui:main
     container_name: ollama-webui
@@ -49,13 +48,13 @@ services:
     depends_on:
       - ollama
     ports:
-      - 8082:8080
+      - "8082:8080"
     environment:
       - USE_OLLAMA_DOCKER=true
       - OLLAMA_BASE_URLS=http://localhost:11435
       - ENV=dev
       - WEBUI_AUTH=false
-      - WEBUI_NAME=4th Creative Party <AI>
+      - WEBUI_NAME=Seongcheol Jeon <AI>
       - WEBUI_URL=http://localhost:8082
       - WEBUI_SECRET_KEY=twotwo95
     extra_hosts:

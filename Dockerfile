@@ -20,11 +20,8 @@ RUN chmod +x wait-for-it.sh
 
 RUN apt-get update && apt-get install -y git curl vim build-essential
 
+# llama 설치
 RUN curl -fsSL https://ollama.com/install.sh | sh
-
-RUN ./wait-for-it.sh ollama -t 10 && ollama daemon &
-
-RUN ollama pull llama3.1
 
 RUN pip install --no-cache-dir -r requirements.txt
 
