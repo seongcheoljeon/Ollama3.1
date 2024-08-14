@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "ollama3-1"
+version = "0.1.0"
+description = ""
+authors = ["Seongcheol Jeon <saelly55@gmail.com>"]
+readme = "README.md"
+packages = [{include = "ollama3"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "^0.112.0"
+uvicorn = "^0.30.6"
+debugpy = "^1.8.5"
+langchain-community = "^0.2.12"
+langchain = "^0.2.13"
+langchainhub = "^0.1.21"
+gpt4all = "^2.8.1"
+chromadb = "^0.5.5"
+requests = "^2.32.3"
+beautifulsoup4 = "^4.12.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
